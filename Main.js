@@ -929,7 +929,7 @@ if($elemento_dom.value == "valor_muro"){
 
 
 
-
+/*
 
 leer_la_tabla()
 
@@ -1379,6 +1379,8 @@ $elemento_dom.addEventListener('change', () => {
     }
   }
 })
+
+*/
 
 
 //const { NoEmitOnErrorsPlugin } = require('webpack')
