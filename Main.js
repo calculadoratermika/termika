@@ -1416,6 +1416,8 @@ if(tmnde<3 && tmnde>-15){
 //humedad_relativa_interior = .43 (en este punto quedó para cam aire 5cm + hºaº 10cm, CABA)
 
 // traer fragmento para inyectar la tabla
+
+/*
 posleer_la_tabla()
 function posleer_la_tabla(){
 
@@ -2396,3 +2398,5 @@ function posleer_la_tabla(){
     }
   }
 }
+
+*/
