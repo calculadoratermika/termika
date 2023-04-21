@@ -929,7 +929,7 @@ if($elemento_dom.value == "valor_muro"){
 
 
 
-
+// acá ya marca problema!
 
 leer_la_tabla()
 
@@ -1389,6 +1389,8 @@ $elemento_dom.addEventListener('change', () => {
 //var psychrolib = require('./psychrolib.js')
 //psychrolib.SetUnitSystem (psychrolib.SI)
 
+
+/*
 let presion_de_vapor_int
 
 let humedad_relativa_interior
@@ -1411,6 +1413,8 @@ if(tmnde<3 && tmnde>-15){
 }else{
   humedad_relativa_interior = .51
 }
+
+*/
 
 // Quiebre para humedad relativa interior
 //humedad_relativa_interior = .43 (en este punto quedó para cam aire 5cm + hºaº 10cm, CABA)
