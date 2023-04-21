@@ -3470,4 +3470,4 @@ let algo = console.log("click en vaciar")
 
 $btnempty.addEventListener ('click', () => {
   algo()
-}
+})
