@@ -3466,7 +3466,12 @@ function posleer_la_tabla(){
 
 let $btnempty = document.getElementById('btnempty')
 
-let algo = console.log("click en vaciar")
+function algo(){
+  console.log("click en vaciar")
+
+
+}
+
 
 $btnempty.addEventListener ('click', () => {
   algo()
