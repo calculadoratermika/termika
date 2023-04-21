@@ -201,9 +201,13 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     float:right;
-    
+
+
 }
 
+#vaciar{
+  height: 20px;
+}
 
 
 #btn-update{
