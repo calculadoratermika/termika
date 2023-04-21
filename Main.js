@@ -3464,7 +3464,7 @@ function posleer_la_tabla(){
   }
 }
 
-let $btn-empty = document.getElementById('btn-empty')
+let $btnempty = document.getElementById('btnempty')
 
 let algo = console.log("click en vaciar")
 
