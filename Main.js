@@ -3463,3 +3463,11 @@ function posleer_la_tabla(){
     }
   }
 }
+
+let $btn-empty = document.getElementById('btn-empty')
+
+let algo = console.log("click en vaciar")
+
+$btn-empty addEventListener ('click'){
+  algo()
+}
