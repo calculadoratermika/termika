@@ -3469,6 +3469,36 @@ let $btnempty = document.getElementById('btnempty')
 function algo(){
   console.log("click en vaciar")
 
+  let db
+  const request = indexedDB.open('listado',1)
+
+  request.onsuccess = () => {
+    db = DBOpenRequest.result
+    clearData()
+  }
+
+  function clearData() {
+    const transtaction = db.transaction(["listado"], "readwrite")
+    transaction.oncomplete = (event) => {
+      console.log("transacción completa")
+    }
+
+    transaction.onerror = (event) => {
+      console.log("error en la transacción")
+    }
+
+    const objectStore = transaction.objectStore("listado")
+
+    const objectStoreRequest = objectStore.clear()
+
+    objectStoreRequest.onsuccess = (event) => {
+      console.log("lista vaciada")
+    }
+
+
+
+  }
+
 
 }
 
