@@ -200,9 +200,14 @@ body {
     background-color: rgb(250, 250, 250);
     border: 1px solid black;
     border-radius: 5px;
-    align-content: flex-end;
+
 }
 
+#vaciar{
+
+    align-content: flex-end;
+
+}
 
 #btn-update{
 
