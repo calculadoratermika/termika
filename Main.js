@@ -1376,7 +1376,8 @@ $elemento_dom.addEventListener('change', () => {
 
 
 
-const { NoEmitOnErrorsPlugin } = require('webpack')
+//const { NoEmitOnErrorsPlugin } = require('webpack')
+
 const { GetHumRatioFromEnthalpyAndTDryBulb } = require('./psychrolib.js')
 // psychrolib
 var psychrolib = require('psychrolib.js')
