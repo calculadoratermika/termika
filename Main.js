@@ -3494,11 +3494,9 @@ function algo(){
     objectStoreRequest.onsuccess = (event) => {
       console.log("lista vaciada")
     }
-
-
-
   }
 
+    window.location.reload()
 
 }
 
