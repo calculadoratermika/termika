@@ -3468,6 +3468,6 @@ let $btnempty = document.getElementById('btnempty')
 
 let algo = console.log("click en vaciar")
 
-$btn-empty addEventListener ('click'){
+$btnempty.addEventListener ('click', () => {
   algo()
 }
