@@ -1382,8 +1382,8 @@ $elemento_dom.addEventListener('change', () => {
 // psychrolib
 //var psychrolib = require('psychrolib.js')
 
-// DESDE ACÁ IMPORTO CRUDO EL PsychroLib
 
+// DESDE ACÁ IMPORTO CRUDO EL PsychroLib
 
 /*
  * PsychroLib (version 2.5.0) (https://github.com/psychrometrics/psychrolib).
