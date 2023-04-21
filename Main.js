@@ -4,7 +4,7 @@
 // dependiendo de ese K, debería saber si nivel A/B o C. Y ahí lo que es la página.
 // no sé si esto se puede así, hay que ver.
 
-/*
+
 
 function getRandomNumberBetween(min,max){
   return Math.floor(Math.random()*(max-min+1)+min)
@@ -16,7 +16,7 @@ ruleta = getRandomNumberBetween(1,27)
 const ruleta_fija = ruleta
 let dado
 
-// --variables para llamar a los select por el id 
+// --variables para llamar a los select por el id
 let $provincia = document.getElementById('provincia') // categoría estaciones
 let $departamento = document.getElementById('departamento') // categoría provincias o distritos
 
