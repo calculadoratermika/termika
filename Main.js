@@ -3473,12 +3473,12 @@ function algo(){
   const request = indexedDB.open('listado',1)
 
   request.onsuccess = () => {
-    db = DBOpenRequest.result
+    db = request.result
     clearData()
   }
 
   function clearData() {
-    const transtaction = db.transaction(["listado"], "readwrite")
+    const transaction = db.transaction(["capas"], "readwrite")
     transaction.oncomplete = (event) => {
       console.log("transacción completa")
     }
@@ -3487,7 +3487,7 @@ function algo(){
       console.log("error en la transacción")
     }
 
-    const objectStore = transaction.objectStore("listado")
+    const objectStore = transaction.objectStore("capas")
 
     const objectStoreRequest = objectStore.clear()
 
