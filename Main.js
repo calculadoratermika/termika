@@ -961,7 +961,7 @@ function leer_la_tabla(){
     }
 
     request.onerror = (error) => {
-      console.log('Error', error)
+      console.log('Error con la indexedDB', error)
     }
 
     // Esta es la función que entra a leer la base de datos local.
