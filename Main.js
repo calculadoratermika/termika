@@ -981,13 +981,9 @@ function leer_la_tabla(){
       }
     }
 
-
     // Este escucha el botón submit que es el simbolo +
     // Acá está agregando data a localStorage con addData(data2)
     // TENGO QUE DECLARAR CADA TIPO DE BOTÓN Y ARMAR UN EVENTLISTENER PARA CADA BOTÓN.
-
-
-
 
     form.addEventListener('submit', (e) =>{
 
@@ -1223,11 +1219,6 @@ function leer_la_tabla(){
 
     })
 
-
-
-
-
-
   }
 }
 
@@ -1392,7 +1383,7 @@ $elemento_dom.addEventListener('change', () => {
 //psychrolib.SetUnitSystem (psychrolib.SI)
 
 
-/*
+
 let presion_de_vapor_int
 
 let humedad_relativa_interior
@@ -1416,14 +1407,14 @@ if(tmnde<3 && tmnde>-15){
   humedad_relativa_interior = .51
 }
 
-*/
+
 
 // Quiebre para humedad relativa interior
 //humedad_relativa_interior = .43 (en este punto quedó para cam aire 5cm + hºaº 10cm, CABA)
 
 // traer fragmento para inyectar la tabla
 
-/*
+
 posleer_la_tabla()
 function posleer_la_tabla(){
 
@@ -2404,5 +2395,3 @@ function posleer_la_tabla(){
     }
   }
 }
-
-*/
