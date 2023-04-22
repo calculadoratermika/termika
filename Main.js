@@ -2483,6 +2483,10 @@ if(tmnde<3 && tmnde>-15){
 // traer fragmento para inyectar la tabla
 
 
+// antes de ejecutar esto tendría que saber el factor k para establecer temp interior según nivel nivel_iram
+
+
+
 posleer_la_tabla()
 function posleer_la_tabla(){
 
