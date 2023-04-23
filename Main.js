@@ -2447,7 +2447,8 @@ function Psychrometrics() {
   return new Psychrometrics();
 }));
 
-// HASTA ACÁ COPIÉ Y PEGUÉ PSYCHROLIB
+
+// HASTA ACÁ COPIÉ Y PEGUÉ PSYCHROLIB /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 
 psychrolib.SetUnitSystem (psychrolib.SI)
@@ -2638,7 +2639,7 @@ function posleer_la_tabla(){
           cursor.continue()
         }else{
           // acá terminó las vueltas por la basde de datos local
-          // agrego el la capa de aire exterior
+          // agrego la capa de aire exterior
 
           const capaTitulo11 = document.createElement('P')
           capaTitulo11.textContent = "Aire exterior"
@@ -3468,7 +3469,12 @@ function posleer_la_tabla(){
   }
 }
 
+
+// botón para vaciado de tabla
+
 let $btnempty = document.getElementById('btnempty')
+
+
 
 function algo(){
   console.log("click en vaciar")
