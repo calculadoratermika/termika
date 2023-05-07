@@ -651,7 +651,6 @@ async function materialData1(){
 
   for(let i=0;i<m_categorias.length;i++){
 
-
     if($elemento_dom.value =="valor_muro"){
 
       if(m_tipos[i] != "horizontales"){
@@ -1338,6 +1337,7 @@ $elemento_dom.addEventListener('change', () => {
 
 
     if($elemento_dom.value == "valor_solado"){
+
       for(let i=0;i<m_categorias.length;i++){
         // a quienes hay que sacar de solados?
         // a los que hay que sacar es a los "heterogeneos"
@@ -3416,7 +3416,7 @@ function posleer_la_tabla(){
 
             switch($elemento_dom.value){
               case "valor_muro":
-              console.log("está usté en muro")
+              console.log("en la función posleer la tablar y muro")
 
               // primero filtrar por temperatura exterior.
 
@@ -3434,10 +3434,10 @@ function posleer_la_tabla(){
 
               break
               case "valor_cubierta":
-              console.log("está usté en cubierta")
+              console.log("en la función posleer la tabla, y cubierta")
               break
               case "valor_solado":
-              console.log("está usté en solado")
+              console.log("en la función posleer la tabla y solado")
 
             }
 
