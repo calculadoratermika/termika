@@ -789,12 +789,15 @@ $categoria_dom.addEventListener('change', () => {
     if($elemento_dom.value == "valor_muro"){
 
       for(let i=0;i<m_nombres.length;i++){
+
         if(m_tipos[i] != "horizontales" && m_categorias_enes[i] == $categoria_dom.value){
           selector_nombre += `<option class="form-control" value="${m_ides[i]}">${m_nombres[i]}</option>`
         }
       }
 
     }else if($elemento_dom.value == "valor_cubierta" || $elemento_dom.value == "valor_solado"){
+
+      console.log("adentro de cubiertas y solados")
 
       for(let i=0;i<m_nombres.length;i++){
 
