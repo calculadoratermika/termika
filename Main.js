@@ -741,7 +741,6 @@ $categoria_dom.addEventListener('change', () => {
 
     const response = await fetch('materiales.csv');
     const data = await response.text();
-
     const filas = data.split('\n').slice(1);
 
     filas.forEach(elemento => {
@@ -808,6 +807,8 @@ $categoria_dom.addEventListener('change', () => {
 
     }
 
+    console.log($categoria_dom.value)
+    
     $nombre_dom.innerHTML = selector_nombre
 
   }
