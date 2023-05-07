@@ -807,8 +807,9 @@ $categoria_dom.addEventListener('change', () => {
 
     }
 
+    console.log("escuchador en la raíz, $categoria_dom.value")
     console.log($categoria_dom.value)
-    
+
     $nombre_dom.innerHTML = selector_nombre
 
   }
