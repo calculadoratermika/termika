@@ -3514,3 +3514,6 @@ function algo(){
 $btnempty.addEventListener ('click', () => {
   algo()
 })
+
+
+console.log("raíz")
