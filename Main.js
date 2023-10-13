@@ -459,7 +459,7 @@ let ok_hay_elemento2
 let tipologia = `
 <option class="form-control" value="valor_muro">Muro</option>
 <option class="form-control" value="valor_cubierta">Cubierta</option>
-<option class="form-control" value="valor_solado">Solado</option>
+<option class="form-control" value="valor_solado">Solado (al exterior)</option>
 `
 
 $elemento_dom.innerHTML = tipologia
