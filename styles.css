@@ -287,7 +287,7 @@ body {
 
 }
 
-#sub_estacion_climatica, #sub_tipologia, #sub_materiales {
+#sub_estacion_climatica, #sub_tipologia {
 
     font-size: smaller;
     font:unset;
@@ -297,6 +297,27 @@ body {
 
     color:rgb(161, 161, 161)
 }
+
+
+#sub_materiales {
+
+    font-size: smaller;
+    font:unset;
+    font-family: Calibri;
+
+    text-align: right;
+
+    color:rgb(161, 161, 161)
+}
+
+
+
+
+
+
+
+
+
 
 #principal {
     width: 400px;
