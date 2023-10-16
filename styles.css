@@ -311,6 +311,33 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
+#principal {
+    width: 400px;
+    margin-left: 300px
+}
+
+#sub_contiene {
+    height: 30px;
+    font-size: 5px;
+}
+
+#ante_valor {
+    font-size: .6em;
+    margin-left: 0;
+
+    color: rgb(66, 66, 66)
+
+}
+
+
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
@@ -338,29 +365,3 @@ body {
     background-color: #04AA6D;
     color: white;
   }
-
-
-
-
-
-
-
-#principal {
-    width: 400px;
-    margin-left: 300px
-}
-
-#sub_contiene {
-    height: 30px;
-    font-size: 5px;
-}
-
-#ante_valor {
-    font-size: .6em;
-    margin-left: 0;
-
-    color: rgb(66, 66, 66)
-
-}
-
-
