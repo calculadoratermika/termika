@@ -3522,3 +3522,5 @@ $btnempty.addEventListener ('click', () => {
 
 
 console.log("raíz")
+console.log("problemas a resolver:")
+console.log("cargar seteo previo")
