@@ -196,15 +196,15 @@
 194,barreras,Barreras de vapor,11,Fieltro asfáltico - Espesor: 0.15 micrones,1200,0.5,1000,0.00015,0,0,0.67,0,0,0
 195,barreras,Barreras de vapor,11,Fieltro saturado y revestido en rollos - Espesor: 0.15 micrones,1100,0.5,1000,0.00015,0,0,0.03,0,0,0
 196,barreras,Barreras de vapor,11,Fieltro bituminado con hoja de aluminio - Espesor: 0.15 micrones,1200,0.5,1000,0.00015,0,0,0.03,0,0,0
-197,barreras,Barreras de vapor,11,Poliurea - Rayston,1020,0.5,1000,2,0,0,0.0375,0,0,0
-198,barreras,Barreras de vapor,11,IRAM 11625 - Masillas y adhesivos - Bituminosa aslfalto,1200,0.5,1000,5,0,0,0.065,0,0,0
-199,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (1 capa) - En frío Bituminosa,1200,0.5,1000,1,0,0,1.08,0,0,0
-200,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Asfáltica sobre madera terciada,1200,0.5,1000,2,0,0,0.08,0,0,0
-201,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Al agua tipo emulsión,1200,0.5,1000,2,0,0,16,0,0,0
-202,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (3 capas) - Mástic Asfáltico,1200,0.5,1000,3,0,0,0.1,0,0,0
-203,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución acuosa,1200,0.5,1000,0.14,0,0,8.62,0,0,0
-204,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución solvente,1200,0.5,1000,0.23,0,0,0.353,0,0,0
-205,barreras,Barreras de vapor,11,Poliurea PURTOP 1000 Mapei,1200,0.5,1000,2,0,0,4.2962962962963,0,0,0
+197,barreras,Barreras de vapor,11,Poliurea - Rayston,1020,0.5,1000,0.002,0,0,0.0375,0,0,0
+198,barreras,Barreras de vapor,11,IRAM 11625 - Masillas y adhesivos - Bituminosa aslfalto,1200,0.5,1000,0.005,0,0,0.065,0,0,0
+199,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (1 capa) - En frío Bituminosa,1200,0.5,1000,0.001,0,0,1.08,0,0,0
+200,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Asfáltica sobre madera terciada,1200,0.5,1000,0.002,0,0,0.08,0,0,0
+201,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Al agua tipo emulsión,1200,0.5,1000,0.002,0,0,16,0,0,0
+202,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (3 capas) - Mástic Asfáltico,1200,0.5,1000,0.003,0,0,0.1,0,0,0
+203,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución acuosa,1200,0.5,1000,0.00014,0,0,8.62,0,0,0
+204,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución solvente,1200,0.5,1000,0.00023,0,0,0.353,0,0,0
+205,barreras,Barreras de vapor,11,Poliurea PURTOP 1000 Mapei,1200,0.5,1000,0.002,0,0,4.2962962962963,0,0,0
 206,barreras,Pinturas,12,Pintura a la cal - Espesor: 0.1 micrones,1000,0.8,1000,0.0001,0,0,75,0,0,0
 207,barreras,Pinturas,12,Pintura tipo epoxi - Espesor: 0.1 micrones,1200,0.3,1000,0.0001,0,0,1.13,0,0,0
 208,barreras,Pinturas,12,Pintura a base de siliconas - Espesor: 0.1 micrones,1000,0.12,1000,0.0001,0,0,3.75,0,0,0
@@ -216,16 +216,16 @@
 214,barreras,Pinturas,12,Resina acrílica de estireno - Espesor: 1 micron,1140,0.2,1000,0.001,0,0,5,0,0,0
 215,barreras,Pinturas,12,Copolímero de cloruro de vinilo - Espesor: 0.2 micrones,1350,0.16,1000,0.0002,0,0,0.1,0,0,0
 216,barreras,Pinturas,12,Resinas de poliuretano - Espesor: 0.2 micrones,45,0.02,1000,0.0002,0,0,1.76,0,0,0
-217,camaras,Cámaras de aire,13,Camara normal 5mm flujo horizontal ,0,0,0,5,0.11,0.11,0,0.63,0,0
-218,camaras,Cámaras de aire,13,Camara normal 10mm flujo horizontal ,0,0,0,10,0.14,0.14,0,0.63,0,0
-219,camaras,Cámaras de aire,13,Camara normal 20mm flujo horizontal ,0,0,0,20,0.16,0.16,0,0.63,0,0
-220,camaras,Cámaras de aire,13,Camara normal 50mm flujo horizontal,0,0,0,50,0.17,0.17,0,0.63,0,0
-221,camaras,Cámaras de aire,13,Camara normal 100mm flujo horizontal,0,0,0,100,0.17,0.17,0,0.63,0,0
-222,camaras,Cámaras de aire,13,Camara reflejante 5mm flujo horizontal,0,0,0,5,0.17,0.17,0,0.63,0,0
-223,camaras,Cámaras de aire,13,Camara reflejante 10mm flujo horizontal,0,0,0,10,0.29,0.29,0,0.63,0,0
-224,camaras,Cámaras de aire,13,Camara reflejante 20mm flujo horizontal,0,0,0,20,0.37,0.37,0,0.63,0,0
-225,camaras,Cámaras de aire,13,Camara reflejante 50mm flujo horizontal,0,0,0,50,0.34,0.34,0,0.63,0,0
-226,camaras,Cámaras de aire,13,Camara reflejante 100mm flujo horizontal,0,0,0,100,0.34,0.34,0,0.63,0,0
+217,camaras,Cámaras verticales de aire,13,Camara normal 5mm flujo horizontal ,0,0,0,5,0.11,0.11,0,0.63,0,0
+218,camaras,Cámaras verticales de aire,13,Camara normal 10mm flujo horizontal ,0,0,0,10,0.14,0.14,0,0.63,0,0
+219,camaras,Cámaras verticales de aire,13,Camara normal 20mm flujo horizontal ,0,0,0,20,0.16,0.16,0,0.63,0,0
+220,camaras,Cámaras verticales de aire,13,Camara normal 50mm flujo horizontal,0,0,0,50,0.17,0.17,0,0.63,0,0
+221,camaras,Cámaras verticales de aire,13,Camara normal 100mm flujo horizontal,0,0,0,100,0.17,0.17,0,0.63,0,0
+222,camaras,Cámaras verticales de aire,13,Camara reflejante 5mm flujo horizontal,0,0,0,5,0.17,0.17,0,0.63,0,0
+223,camaras,Cámaras verticales de aire,13,Camara reflejante 10mm flujo horizontal,0,0,0,10,0.29,0.29,0,0.63,0,0
+224,camaras,Cámaras verticales de aire,13,Camara reflejante 20mm flujo horizontal,0,0,0,20,0.37,0.37,0,0.63,0,0
+225,camaras,Cámaras verticales de aire,13,Camara reflejante 50mm flujo horizontal,0,0,0,50,0.34,0.34,0,0.63,0,0
+226,camaras,Cámaras verticales de aire,13,Camara reflejante 100mm flujo horizontal,0,0,0,100,0.34,0.34,0,0.63,0,0
 227,horizontales,Bloques de hormigón y forjados,14,Forjados 12 x 50, 1400,0,1000,120,0.137,0.135,0,0.07,0,0
 228,horizontales,Bloques de hormigón y forjados,14,Forjados 16 x 50, 1400,0,1000,160,0.156,0.148,0,0.07,0,0
 229,horizontales,Bloques de hormigón y forjados,14,Forjados 20 x 50, 1400,0,1000,200,0.178,0.18,0,0.07,0,0
@@ -234,16 +234,16 @@
 232,horizontales,Bloques de hormigón y forjados,14,Forjados 20 x 60, 1400,0,1000,200,0.25,0.268,0,0.07,0,0
 233,horizontales,Bloques de hormigón y forjados,14,Forjados 25 x 50, 1400,0,1000,250,0.25,0.282,0,0.07,0,0
 234,horizontales,Bloques de hormigón y forjados,14,Forjados 25 x 70, 1400,0,1000,250,0.27,0.484,0,0.07,0,0
-235,horizontales,Cámaras de aire,15,Camara normal 5mm flujo vertical,0,0,0,5,0.11,0.11,0,0.63,0,0
-236,horizontales,Cámaras de aire,15,Camara normal 10mm flujo vertical,0,0,0,10,0.13,0.15,0,0.63,0,0
-237,horizontales,Cámaras de aire,15,Camara normal 20mm flujo vertical,0,0,0,200,0.14,0.18,0,0.63,0,0
-238,horizontales,Cámaras de aire,15,Camara normal 50mm flujo vertical,0,0,0,50,0.14,0.21,0,0.63,0,0
-239,horizontales,Cámaras de aire,15,Camara normal 100mm flujo vertical,0,0,0,100,0.14,0.14,0,0.63,0,0
-240,horizontales,Cámaras de aire,15,Camara reflejante 5mm flujo vertical,0,0,0,5,0.17,0.17,0,0.63,0,0
-241,horizontales,Cámaras de aire,15,Camara reflejante 10mm flujo vertical,0,0,0,10,0.23,0.29,0,0.63,0,0
-242,horizontales,Cámaras de aire,15,Camara reflejante 20mm flujo vertical,0,0,0,20,0.25,0.43,0,0.63,0,0
-243,horizontales,Cámaras de aire,15,Camara reflejante 50mm flujo vertical,0,0,0,50,0.27,0.61,0,0.63,0,0
-244,horizontales,Cámaras de aire,15,Camara reflejante 100mm flujo vertical,0,0,0,100,0.27,0.61,0,0.63,0,0
+235,horizontales,Cámaras horizontales de aire,15,Camara normal 5mm flujo vertical,0,0,0,5,0.11,0.11,0,0.63,0,0
+236,horizontales,Cámaras horizontales de aire,15,Camara normal 10mm flujo vertical,0,0,0,10,0.13,0.15,0,0.63,0,0
+237,horizontales,Cámaras horizontales de aire,15,Camara normal 20mm flujo vertical,0,0,0,200,0.14,0.18,0,0.63,0,0
+238,horizontales,Cámaras horizontales de aire,15,Camara normal 50mm flujo vertical,0,0,0,50,0.14,0.21,0,0.63,0,0
+239,horizontales,Cámaras horizontales de aire,15,Camara normal 100mm flujo vertical,0,0,0,100,0.14,0.14,0,0.63,0,0
+240,horizontales,Cámaras horizontales de aire,15,Camara reflejante 5mm flujo vertical,0,0,0,5,0.17,0.17,0,0.63,0,0
+241,horizontales,Cámaras horizontales de aire,15,Camara reflejante 10mm flujo vertical,0,0,0,10,0.23,0.29,0,0.63,0,0
+242,horizontales,Cámaras horizontales de aire,15,Camara reflejante 20mm flujo vertical,0,0,0,20,0.25,0.43,0,0.63,0,0
+243,horizontales,Cámaras horizontales de aire,15,Camara reflejante 50mm flujo vertical,0,0,0,50,0.27,0.61,0,0.63,0,0
+244,horizontales,Cámaras horizontales de aire,15,Camara reflejante 100mm flujo vertical,0,0,0,100,0.27,0.61,0,0.63,0,0
 245,heterogeneos,Bloques de hormigón,16,Bloque Ho.de arcilla expand, 1034,0.451612903225806,1000,140,0.31,0.31,0,0.15,3,0.23
 246,heterogeneos,Bloques de hormigón,16,Bloque Ho. d=2200 10cm, 2220,0.588235294117647,1000,100,0.17,0.17,0,0.044,0.59,0.059
 247,heterogeneos,Bloques de hormigón,16,Bloque Ho. d=1900 19cm, 1900,1,1000,190,0.19,0.19,0,0.07,0.59,0.059

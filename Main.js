@@ -1,10 +1,6 @@
-// Inicio
-
-// Lo primero que debería ejecutar es saber si hay localStorage() y calcular el K.
-// dependiendo de ese K, debería saber si nivel A/B o C. Y ahí lo que es la página.
-// no sé si esto se puede así, hay que ver.
-
-
+/////////////////////////////////////////////////////////////////////////
+//////////////         CLIMA      //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 function getRandomNumberBetween(min,max){
   return Math.floor(Math.random()*(max-min+1)+min)
@@ -20,7 +16,7 @@ let dado
 let $provincia = document.getElementById('provincia') // categoría estaciones
 let $departamento = document.getElementById('departamento') // categoría provincias o distritos
 
-let $valor_k = document.getElementById('valor_k')
+//let $valor_k = document.getElementById('valor_k')
 
 let temp_min_ext
 
@@ -102,6 +98,7 @@ async function estacionData() {
   function obtener_localstorage(){
 
     if(localStorage.getItem("climatologia")){
+
       let ok_haydata = JSON.parse(localStorage.getItem("climatologia"))
 
       for(let i=0;i<e_numeros.length;i++){
@@ -166,7 +163,7 @@ async function estacionData() {
           primer_distrito = distritos_unicos[i]
           template2 +=`<option class="form-control" value="${codigos_unicos[i]}">${distritos_unicos[i]}</option>`
         }else{
-          //nada
+          //
         }
       }
 
@@ -174,7 +171,7 @@ async function estacionData() {
         if(codigos_unicos[i]!=ruleta_fija){
           template2 +=`<option class="form-control" value="${codigos_unicos[i]}">${distritos_unicos[i]}</option>`
         }else{
-          //la nada nisman
+          //
         }
       }
 
@@ -191,7 +188,7 @@ async function estacionData() {
           conjunto_numeros.push(e_numeros[i])
           //template += `<option class="form-control" value="${e_numeros[i]}">${e_estaciones[i]}</option>`
         }else{
-          // otra vez nada
+          // 
         }
       }
 
@@ -212,7 +209,7 @@ async function estacionData() {
         if(conjunto_estaciones[i]!=conjunto_estaciones[dado2-1]){
           template += `<option class="form-control" value="${conjunto_numeros[i]}">${conjunto_estaciones[i]}</option>`
         }else{
-          // esto no hace falta ya sé ...
+          // 
         }
       }
 
@@ -239,7 +236,6 @@ async function estacionData() {
   }
 
 }
-
 
 //ESCUCHADOR SELECTOR PROVINCIA
 $departamento.addEventListener('change', () => {
@@ -366,10 +362,10 @@ $departamento.addEventListener('change', () => {
 
     }
 
-
-    canvas_base()
-    obtener_localstorage()
-    leer_la_tabla()
+    window.location.reload()
+    //canvas_base()
+    //obtener_localstorage()
+    //leer_la_tabla()
 
   }
 
@@ -452,112 +448,193 @@ $provincia.addEventListener('change', () => {
 
 })
 
-let $elemento_dom = document.getElementById('elemento_dom') //
+/////////////////////////////////////////////////////////////////////////
+//////////////         TIPOLOGÍA      //////////////////////////////////
+////////////////////////////////////////////////////////////////////////
 
-let ok_hay_elemento2
+// conecta al DOM
 
-let tipologia = `
-<option class="form-control" value="valor_muro">Muro</option>
-<option class="form-control" value="valor_cubierta">Cubierta</option>
-<option class="form-control" value="valor_solado">Solado (al exterior)</option>
-`
+let $elemento_dom = document.getElementById('elemento_dom')
 
-$elemento_dom.innerHTML = tipologia
+// ESCUCHADOR PARA CAMBIO DE ELEMENTO (TIPOLOGÍA)
+$elemento_dom.addEventListener('change', () => {
 
-obtener_localstorage3()
+  algo2()
 
-function obtener_localstorage3(){
-
-  if(localStorage.getItem("elemento_ls")){
-    ok_hay_elemento2 = JSON.parse(localStorage.getItem("elemento_ls"))
-
-    //console.log("estoy adentro de obtener localstorage")
-    //console.log(ok_hay_elemento2.ls_elemento)
-
-    if(ok_hay_elemento2.ls_elemento == "valor muro"){
-
-      //console.log("adentro de valor_muro")
-
-      tipologia = `
-      <option class="form-control" value="valor_muro">Muro</option>
-      <option class="form-control" value="valor_cubierta">Cubierta</option>
-      <option class="form-control" value="valor_solado">Solado (al exterior)</option>
-     `
-
-      $elemento_dom.innerHTML = tipologia
-
-    }else if(ok_hay_elemento2.ls_elemento == "valor_cubierta"){
-
-      //console.log("estas adentro del valor_cubierta")
-
-      tipologia = `
-
-      <option class="form-control" value="valor_cubierta">Cubierta</option>
-      <option class="form-control" value="valor_solado">Solado (al exterior)</option>
-      <option class="form-control" value="valor_muro">Muro</option>
-
-     `
-      $elemento_dom.innerHTML = tipologia
-
-    }else if(ok_hay_elemento2.ls_elemento == "valor_solado"){
-
-      //console.log("adentro de valor_solado")
-
-      tipologia = `
-      <option class="form-control" value="valor_solado">Solado (al exterior)</option>
-      <option class="form-control" value="valor_muro">Muro</option>
-      <option class="form-control" value="valor_cubierta">Cubierta</option>
-     `
-
-      $elemento_dom.innerHTML = tipologia
-
-    }else{
-      //console.log("por acá pasa cuando no hay ls_elemento")
-      $elemento_dom.innerHTML = tipologia
-
+  function algo2(){
+    console.log("click en vaciar")
+  
+    let db
+    const request = indexedDB.open('listado',1)
+  
+    request.onsuccess = () => {
+      db = request.result
+      clearData()
     }
-  }
-}
-
-
-const canvas = document.getElementById('sandbox')
-const ctx = canvas.getContext('2d')
-
-ctx.save()
-
-canvas_base()
-
-function canvas_base(){
-
- ctx.clearRect(0,0,canvas.width,canvas.height)
- ctx.fillStyle = "white"
- ctx.fillRect(0,0, canvas.width, canvas.height)
-
-}
-
-let $temp_dis_ext_dom = document.getElementById('temp_dis_ext_dom') // conectado al dom - NO VISIBLE
-let $res_sup_int_dom = document.getElementById('res_sup_int_dom') // conectado al dom - NO VISIBLE
-
-
-obtener_localstorage()
-
-function obtener_localstorage(){
-
-  if(localStorage.getItem("climatologia")){
-    let ok_haydata = JSON.parse(localStorage.getItem("climatologia"))
-
-    ctx.font = "14px Calibri";
-    ctx.fillStyle = "black";
-    ctx.textAlign = "center";
-    ctx.fillText(`Temp. ext.: ${ok_haydata.ls_tmnd}º C`, canvas.width/2+canvas.width/3.1, (canvas.height/3)*2.4);
-
-    $temp_dis_ext_dom.value = Number(ok_haydata.ls_tmnd)
-
-  }else{
-
+  
+    function clearData() {
+      const transaction = db.transaction(["capas"], "readwrite")
+      transaction.oncomplete = (event) => {
+        console.log("transacción completa")
+      }
+  
+      transaction.onerror = (event) => {
+        console.log("error en la transacción")
+      }
+  
+      const objectStore = transaction.objectStore("capas")
+  
+      const objectStoreRequest = objectStore.clear()
+  
+      objectStoreRequest.onsuccess = (event) => {
+        console.log("lista vaciada")
+      }
+    }
+  
+      window.location.reload()
+  
   }
 
-}
+
+  if($elemento_dom.value == "valor_muro"){
+    localStorage.setItem("Tipo","Muro")
+
+    
+  }
+
+  if($elemento_dom.value == "valor_cubierta"){
+    localStorage.setItem("Tipo","Cubierta")
+
+    algo2()
+
+    function algo2(){
+      console.log("click en vaciar")
+    
+      let db
+      const request = indexedDB.open('listado',1)
+    
+      request.onsuccess = () => {
+        db = request.result
+        clearData()
+      }
+    
+      function clearData() {
+        const transaction = db.transaction(["capas"], "readwrite")
+        transaction.oncomplete = (event) => {
+          console.log("transacción completa")
+        }
+    
+        transaction.onerror = (event) => {
+          console.log("error en la transacción")
+        }
+    
+        const objectStore = transaction.objectStore("capas")
+    
+        const objectStoreRequest = objectStore.clear()
+    
+        objectStoreRequest.onsuccess = (event) => {
+          console.log("lista vaciada")
+        }
+      }
+    
+        window.location.reload()
+    
+    }
+
+    
+  }
+
+  if($elemento_dom.value == "valor_solado"){
+    localStorage.setItem("Tipo","Solado")
+
+    algo2()
+
+    function algo2(){
+      console.log("click en vaciar")
+    
+      let db
+      const request = indexedDB.open('listado',1)
+    
+      request.onsuccess = () => {
+        db = request.result
+        clearData()
+      }
+    
+      function clearData() {
+        const transaction = db.transaction(["capas"], "readwrite")
+        transaction.oncomplete = (event) => {
+          console.log("transacción completa")
+        }
+    
+        transaction.onerror = (event) => {
+          console.log("error en la transacción")
+        }
+    
+        const objectStore = transaction.objectStore("capas")
+    
+        const objectStoreRequest = objectStore.clear()
+    
+        objectStoreRequest.onsuccess = (event) => {
+          console.log("lista vaciada")
+        }
+      }
+    
+        window.location.reload()
+    
+    }
+
+    
+  }
+
+  location.reload()
+
+})
+
+// ALMACENA OPCIÓN DE TIPOLOGÍA
+localStorage.setItem("Clave", "Valor")
+localStorage.removeItem("Clave", "Valor")
+
+
+if(localStorage.getItem("Tipo")==null){
+  localStorage.setItem("Tipo","Muro")  
+  let selector_tipo = `
+  <option class="form-control" value="valor_muro">Muro</option>
+  <option class="form-control" value="valor_cubierta">Cubierta</option>
+  <option class="form-control" value="valor_solado">Solado</option>
+  `
+  $elemento_dom.innerHTML = selector_tipo
+
+}else if(localStorage.getItem("Tipo")=="Muro"){
+  let selector_tipo = `
+  <option class="form-control" value="valor_muro">Muro</option>
+  <option class="form-control" value="valor_cubierta">Cubierta</option>
+  <option class="form-control" value="valor_solado">Solado</option>
+  `
+  $elemento_dom.innerHTML = selector_tipo
+
+}else if(localStorage.getItem("Tipo")=="Cubierta"){
+
+  let selector_tipo = `
+  <option class="form-control" value="valor_cubierta">Cubierta</option>
+  <option class="form-control" value="valor_muro">Muro</option>
+  <option class="form-control" value="valor_solado">Solado</option>
+  `
+  $elemento_dom.innerHTML = selector_tipo    
+
+}else if(localStorage.getItem("Tipo")=="Solado"){
+
+  let selector_tipo = `
+    <option class="form-control" value="valor_solado">Solado</option>        
+    <option class="form-control" value="valor_cubierta">Cubierta</option>
+    <option class="form-control" value="valor_muro">Muro</option>          
+  `
+  $elemento_dom.innerHTML = selector_tipo  
+}  
+
+
+/////////////////////////////////////////////////////////////////////////
+//////////////         MATERIALES          //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 
 let $categoria_dom = document.getElementById('categoria_dom') // conectando con el selector DOM
 let $nombre_dom = document.getElementById('nombre_dom') // conectando con el selector DOM
@@ -566,13 +643,22 @@ let $espesor_dom = document.getElementById('espesor_dom') // conectado con el in
 let $conductividad_dom = document.getElementById('conductividad_dom') // conectado al dom - NO VISIBLE
 let $resistencia_ascendente_dom = document.getElementById('resistencia_ascendente_dom') //
 let $resistencia_descendente_dom = document.getElementById('resistencia_descendente_dom') //
+
 let $permeabilidad_vapor_dom = document.getElementById('permeabilidad_vapor_dom') //
 let $resistencia_vapor_dom = document.getElementById('resistencia_vapor_dom') //
 
-const indexedDB = window.indexedDB
-const form = document.getElementById('form')
-const latabla = document.getElementById('latabla')
+const canvas = document.getElementById('sandbox')
+const ctx = canvas.getContext('2d')
 
+ctx.save()
+
+function canvas_base(){
+
+  ctx.clearRect(0,0,canvas.width,canvas.height)
+  ctx.fillStyle = "white"
+  ctx.fillRect(0,0, canvas.width, canvas.height)
+ 
+}
 
 let selector_nombre = ''
 
@@ -645,74 +731,72 @@ async function materialData1(){
 
   })
 
-  //console.log($elemento_dom.value)
   let m_catego_ok = []
-
 
   for(let i=0;i<m_categorias.length;i++){
 
     if($elemento_dom.value =="valor_muro"){
-
       if(m_tipos[i] != "horizontales"){
-
         if(m_categorias[i] != m_categorias[i-1]){
-
-          selector_categoria += `<option class="form-control" value="${m_categorias_enes[i]}">${m_categorias[i]}</option>`
+          selector_categoria += `<option class="form-control" value="${m_categorias[i]}">${m_categorias[i]}</option>`
           m_catego_ok.push(m_categorias_enes[i])
-
-        }else{}
-
+        }
       }
 
     }else if($elemento_dom.value =="valor_cubierta"){
-
-      if(m_tipos[i] != "heterogeneos" && m_categorias_enes[i] != 13){
-
+      if(m_tipos[i] != "camaras"){
         if(m_categorias[i] != m_categorias[i-1]){
-
-          selector_categoria += `<option class="form-control" value"${m_categorias_enes[i]}">${m_categorias[i]}</option>`
+          selector_categoria += `<option class="form-control" value"${m_categorias[i]}">${m_categorias[i]}</option>`
           m_catego_ok.push(m_categorias_enes[i])
-
-        }
+        }     
       }
 
     }else if($elemento_dom.value =="valor_solado"){
-
-      if(m_tipos[i] != "heterogeneos" && m_categorias_enes[i] != 13){
-
+      if(m_tipos[i] != "heterogeneos" && m_categorias_enes[i] && m_tipos[i] != "camaras"){
         if(m_categorias[i] != m_categorias[i-1]){
-
-          selector_categoria += `<option class="form-control" value"${m_categorias_enes[i]}">${m_categorias[i]}</option>`
+          selector_categoria += `<option class="form-control" value"${m_categorias[i]}">${m_categorias[i]}</option>`
           m_catego_ok.push(m_categorias_enes[i])
-
         }
-
-
-      }
-
-    }else{}
-
+      } 
+    }
   }
 
   $categoria_dom.innerHTML = selector_categoria
 
   // acá tengo que agregar el llenado del selector de nombre que es para el caso primer categoria
+  for(let i=0;i<m_nombres.length;i++){
+
+    if(m_categorias_enes[0] == m_categorias_enes[i]){
+      selector_nombre += `<option class="form-control" value="${m_catego_ok[i]}">${m_nombres[i]}</option>`
+    }  
+  }
+  $nombre_dom.innerHTML = selector_nombre  
+  // hasta acá llenado selector de nombre para el caso primer categoria
+
+
 
   for(let i=0;i<m_nombres.length;i++){
 
-    if(m_catego_ok[0] == m_categorias_enes[i]){
+    if(m_espesores[i]>0 && $nombre_dom.value == m_ides[i]){
 
-      selector_nombre += `<option class="form-control" value="${m_ides[i]}">${m_nombres[i]}</option>`
+      // buscar el input del espesor
+      $espesor_dom.value = Number(m_espesores[i])
+      document.getElementById("espesor_dom").disabled = true
+
+    }else if(m_espesores[i] == 0 && $nombre_dom.value == m_ides[i]){
+      $espesor_dom.value = 0
+      document.getElementById("espesor_dom").disabled = false
     }
-
   }
 
-
-  $nombre_dom.innerHTML = selector_nombre
-  // hasta acá llenado selector de nombre para el caso primer categoria
-
+  
 }
 
+
+
+///////////////////
+/////////////////
+///////////////////
 
 // ESCUCHADOR PARA CAMBIO DE CATEGORIA
 $categoria_dom.addEventListener('change', () => {
@@ -777,461 +861,100 @@ $categoria_dom.addEventListener('change', () => {
       m_contenidos_energeticos.push(m_contenido_energetico)
       m_emisiones.push(m_emision)
 
-
     })
 
 
+    let selector_categoria = ""
+    let m_catego_ok = []
 
-    // recorre todos los nombres
-    // acá es donde tengo que filtrar otra vez las dos valores de MURO/CUBIERTAS Y SOLADOS
+    for(let i=0;i<m_categorias.length;i++){
 
-    if($elemento_dom.value == "valor_muro"){
+      if($elemento_dom.value =="valor_muro"){
+        
+        if(m_tipos[i] != "horizontales"){
 
-      for(let i=0;i<m_nombres.length;i++){
+          if(m_categorias[i] != m_categorias[i-1]){
 
-        if(m_tipos[i] != "horizontales" && m_categorias_enes[i] == $categoria_dom.value){
-          selector_nombre += `<option class="form-control" value="${m_ides[i]}">${m_nombres[i]}</option>`
+            selector_categoria += `<option class="form-control" value="${m_categorias[i]}">${m_categorias[i]}</option>`
+            m_catego_ok.push(m_categorias_enes[i])
+
+            console.log(m_categorias[i])
+          }
         }
-      }
+  
+      }else if($elemento_dom.value =="valor_cubierta"){
 
-    }else if($elemento_dom.value == "valor_cubierta" || $elemento_dom.value == "valor_solado"){
 
-      console.log("adentro de cubiertas y solados")
-
-      for(let i=0;i<m_nombres.length;i++){
-
-        if($categoria_dom.value == m_categorias_enes[i]){
-          selector_nombre += `<option class="form-control" value="${m_ides[i]}">${m_nombres[i]}</option>`
-
+        if(m_tipos[i] != "camaras"){
+          if(m_categorias[i] != m_categorias[i-1]){
+            selector_categoria += `<option class="form-control" value"${m_categorias[i]}">${m_categorias[i]}</option>`
+            m_catego_ok.push(m_categorias_enes[i])
+          }     
         }
+  
+      }else if($elemento_dom.value =="valor_solado"){
 
+
+        if(m_tipos[i] != "heterogeneos" && m_categorias_enes[i]){
+          if(m_categorias[i] != m_categorias[i-1]){
+            selector_categoria += `<option class="form-control" value"${m_categorias[i]}">${m_categorias[i]}</option>`
+            m_catego_ok.push(m_categorias_enes[i])
+          }
+        } 
       }
-
     }
 
-    console.log("escuchador en la raíz, $categoria_dom.value")
-    console.log($categoria_dom.value)
+    let selector_nombre = ""
+
+    //acá tengo que agregar el llenado del selector de nombre 
+    for(let i=0;i<m_nombres.length;i++){
+
+      if($categoria_dom.value == m_categorias[i]){
+      selector_nombre += `<option class="form-control" value="${m_ides[i]}">${m_nombres[i]}</option>`
+      }
+    }
 
     $nombre_dom.innerHTML = selector_nombre
 
+
+    for(let i=0;i<m_nombres.length;i++){
+
+      if(m_espesores[i]>0 && $nombre_dom.value == m_ides[i]){
+
+        // buscar el input del espesor
+        $espesor_dom.value = Number(m_espesores[i])
+        document.getElementById("espesor_dom").disabled = true
+
+      }else if(m_espesores[i] == 0 && $nombre_dom.value == m_ides[i]){
+        $espesor_dom.value = 0
+        document.getElementById("espesor_dom").disabled = false
+      }
+    }   
+
+
+    for(let i=0;i<m_nombres.length;i++){
+
+      if(m_espesores[i]>0 && $nombre_dom.value == m_ides[i]){
+
+        // buscar el input del espesor
+        $espesor_dom.value = Number(m_espesores[i])
+        document.getElementById("espesor_dom").disabled = true
+
+      }else if(m_espesores[i] == 0 && $nombre_dom.value == m_ides[i]){
+        $espesor_dom.value = 0
+        document.getElementById("espesor_dom").disabled = false
+      }
+    }
+
+  
   }
-
-
-
 })
 
-
-// ESCUCHADOR PARA CAMBIO DE NOMBRE DE MATERIAL
+//ESCUCHADOR PARA CAMBIO DE NOMBRE DE MATERIAL
 $nombre_dom.addEventListener('change', () =>{
 
-materialData3()
-async function materialData3(){
-
-  let m_ides = []
-  let m_tipos = []
-  let m_categorias = []
-  let m_categorias_enes = []
-  let m_nombres = []
-  let m_densidades = []
-  let m_conductividades = []
-  let m_capacidades_termicas = []
-  let m_espesores = []
-  let m_resistencias_ascendentes = []
-  let m_resistencias_descendentes = []
-  let m_permeancias = []
-  let m_permeabilidades = []
-  let m_contenidos_energeticos = []
-  let m_emisiones = []
-
-  const response = await fetch('materiales.csv');
-  const data = await response.text();
-
-  const filas = data.split('\n').slice(1);
-
-  filas.forEach(elemento => {
-    const fila = elemento.split(',');
-
-    const m_id = fila[0];
-    const m_tipo = fila[1];
-    const m_categoria = fila[2];
-    const m_categoria_n = fila[3];
-    const m_nombre = fila[4];
-    const m_densidad = fila[5];
-    const m_conductividad = fila[6];
-    const m_capacidad_termica = fila[7];
-    const m_espesor = fila[8];
-    const m_resistencia_ascendente = fila[9];
-    const m_resistencia_descendente = fila[10];
-    const m_permeancia = fila[11];
-    const m_permeabilidad = fila[12];
-    const m_contenido_energetico = fila[13];
-    const m_emision = fila[14];
-
-    m_ides.push(m_id)
-    m_tipos.push(m_tipo)
-    m_categorias.push(m_categoria)
-    m_categorias_enes.push(m_categoria_n)
-    m_nombres.push(m_nombre)
-    m_densidades.push(m_densidad)
-    m_conductividades.push(m_conductividad)
-    m_capacidades_termicas.push(m_capacidad_termica)
-    m_espesores.push(m_espesor)
-    m_resistencias_ascendentes.push(m_resistencia_ascendente)
-    m_resistencias_descendentes.push(m_resistencia_descendente)
-    m_permeancias.push(m_permeancia)
-    m_permeabilidades.push(m_permeabilidad)
-    m_contenidos_energeticos.push(m_contenido_energetico)
-    m_emisiones.push(m_emision)
-
-  })
-
-  let selector_nombre = ''
-
-
-  for(let i=0;i<m_nombres.length;i++){
-
-    if(m_espesores[i]>0 && $nombre_dom.value == m_ides[i]){
-
-      // buscar el input del espesor
-
-      $espesor_dom.value = Number(m_espesores[i])
-      document.getElementById("espesor_dom").disabled = true
-
-
-    }else if(m_espesores[i] == 0 && $nombre_dom.value == m_ides[i]){
-      $espesor_dom.value = 0
-      document.getElementById("espesor_dom").disabled = false
-    }
-
-
-  }
-
-
-}
-
-
-})
-
-
-// la temperatura de diseño interior debería variar según el Nivel A/B/C
-const temp_dis_int = 18
-
-// imprimir la temperatura interior
-
-ctx.font = "14px Calibri"
-ctx.fillStyle = "black"
-ctx.textAlign = "center"
-ctx.fillText(`Temp. int.:${temp_dis_int}º C`, canvas.width/6, canvas.height/4.65)
-
-
-if($elemento_dom.value == "valor_muro"){
-  $res_sup_int_dom.value = .13
-}else if($elemento_dom.value == "valor_cubierta"){
-  $res_sup_int_dom.value = .1
-}else{
-  $res_sup_int_dom.value = .17
-}
-
-
-
-
-// acá ya marca problema!
-
-leer_la_tabla()
-
-function leer_la_tabla(){
-
-  if(indexedDB && form){
-    let db
-    const request = indexedDB.open('listado',1)
-
-    // acá ejecuta readData()
-    request.onsuccess = () => {
-
-      db = request.result
-      //console.log('OPEN', db)
-      readData()
-
-    }
-
-    request.onupgradeneeded = () => {
-
-      db = request.result
-      //console.log('Create', db)
-
-      const objectStore = db.createObjectStore('capas',{
-        autoIncrement: true
-      })
-    }
-
-    request.onerror = (error) => {
-      console.log('Error con la indexedDB', error)
-    }
-
-    // Esta es la función que entra a leer la base de datos local.
-    const readData = () =>{
-
-      const transaction = db.transaction(['capas'],'readonly')
-      const objectStore = transaction.objectStore('capas')
-      const request = objectStore.openCursor()
-
-      request.onsuccess = (e) => {
-        const cursor = e.target.result
-        if(cursor){
-          cursor.continue()
-        }else{
-          //console.log("no hay más capas")
-        }
-      }
-    }
-
-    // Este escucha el botón submit que es el simbolo +
-    // Acá está agregando data a localStorage con addData(data2)
-    // TENGO QUE DECLARAR CADA TIPO DE BOTÓN Y ARMAR UN EVENTLISTENER PARA CADA BOTÓN.
-
-    form.addEventListener('submit', (e) =>{
-
-      e.preventDefault()
-
-      let data2
-
-      materialData4()
-
-      async function materialData4(){
-
-        data2=""
-
-        let m_ides = []
-        let m_tipos = []
-        let m_categorias = []
-        let m_categorias_enes = []
-        let m_nombres = []
-        let m_densidades = []
-        let m_conductividades = []
-        let m_capacidades_termicas = []
-        let m_espesores = []
-        let m_resistencias_ascendentes = []
-        let m_resistencias_descendentes = []
-        let m_permeancias = []
-        let m_permeabilidades = []
-        let m_contenidos_energeticos = []
-        let m_emisiones = []
-
-        const response = await fetch('materiales.csv');
-        const data = await response.text();
-
-        const filas = data.split('\n').slice(1);
-
-        filas.forEach(elemento => {
-
-          const fila = elemento.split(',');
-
-          const m_id = fila[0];
-          const m_tipo = fila[1];
-          const m_categoria = fila[2];
-          const m_categoria_n = fila[3];
-          const m_nombre = fila[4];
-          const m_densidad = fila[5];
-          const m_conductividad = fila[6];
-          const m_capacidad_termica = fila[7];
-          const m_espesor = fila[8];
-          const m_resistencia_ascendente = fila[9];
-          const m_resistencia_descendente = fila[10];
-          const m_permeancia = fila[11];
-          const m_permeabilidad = fila[12];
-          const m_contenido_energetico = fila[13];
-          const m_emision = fila[14];
-
-
-          m_ides.push(m_id)
-          m_tipos.push(m_tipo)
-          m_categorias.push(m_categoria)
-          m_categorias_enes.push(m_categoria_n)
-          m_nombres.push(m_nombre)
-          m_densidades.push(m_densidad)
-          m_conductividades.push(m_conductividad)
-          m_capacidades_termicas.push(m_capacidad_termica)
-          m_espesores.push(m_espesor)
-          m_resistencias_ascendentes.push(m_resistencia_ascendente)
-          m_resistencias_descendentes.push(m_resistencia_descendente)
-          m_permeancias.push(m_permeancia)
-          m_permeabilidades.push(m_permeabilidad)
-          m_contenidos_energeticos.push(m_contenido_energetico)
-          m_emisiones.push(m_emision)
-
-
-        })
-
-        // Esto se está ejecutando cuando apreto el botón "+"
-
-        if(e.target.espesor_dom.value>0){
-
-          if($elemento_dom.value == "valor_muro"){
-
-            // elemento muro con espesor prestablecido
-
-            if(m_resistencias_ascendentes[e.target.nombre_dom.value]
-              == m_resistencias_descendentes[e.target.nombre_dom.value]
-              && Number(m_resistencias_ascendentes[e.target.nombre_dom.value])>0){
-
-              data2 = {
-                capaNumero:Number(e.target.nombre_dom.value),
-                capaNombre:m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor:Number((parseFloat(e.target.espesor_dom.value).toFixed(8))/1000),
-                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat(m_resistencias_ascendentes[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-
-              }
-
-            }else{
-
-              // esta opción es para elementos de muros que no tienen prestablecido el espesor
-
-              const espesor_de_calculo = Number(parseFloat(e.target.espesor_dom.value).toFixed(8))
-
-              data2 = {
-                capaNumero:Number(e.target.nombre_dom.value),
-                capaNombre:m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor:espesor_de_calculo/1000,
-                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat((espesor_de_calculo/1000)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-
-              }
-            }
-
-          }else if($elemento_dom.value == "valor_cubierta"){
-
-            // caso 1: materiales con valor (>0) en res_asc o valores dif. de ascente != descendente
-            if(Number(m_resistencias_ascendentes[e.target.nombre_dom.value]) >0
-              || Number(m_resistencias_ascendentes[e.target.nombre_dom.value])
-              != Number(m_resistencias_descendentes[e.target.nombre_dom.value])){
-
-              data2 = {
-                capaNumero:Number(e.target.nombre_dom.value),
-                capaNombre:m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor:Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
-                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat(m_resistencias_ascendentes[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-              }
-
-              // caso 2: materiales con valor 0 en res_ascendente
-
-            }else if(Number(m_resistencias_ascendentes[e.target.nombre_dom.value]) == 0){
-              const espesor_de_calculo = Number(parseFloat(e.target.espesor_dom.value).toFixed(8))
-
-              data2 = {
-                capaNumero:Number(e.target.nombre_dom.value),
-                capaNombre:m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor:Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
-                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat((espesor_de_calculo/1000)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-              }
-
-            }
-
-          }else if($elemento_dom.value == "valor_solado"){
-
-
-            // caso 1 : materiales con valor (>0) en res_desce y q sean diferentes asce != desce
-            // la resistencia toma el valor dado para DESCENDENTE
-            if(Number(m_resistencias_descendentes[e.target.nombre_dom.value])>0
-            && Number(m_resistencias_ascendentes[e.target.nombre_dom.value])
-            != Number(m_resistencias_descendentes[e.target.nombre_dom.value])) {
-
-              data2 = {
-                capaNumero: Number(e.target.nombre_dom.value),
-                capaNombre: m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor: Number(parseFloat(e.target.espesor_dom.value).toFixed(8)),
-                capaConductividad : Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat(m_resistencias_descendentes[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-
-              }
-
-              // caso 2: materiales con valor = 0 en resist. descendente
-            }else if(Number(m_resistencias_descendentes[e.target.nombre_dom.value])==0){
-
-              data2 = {
-                capaNumero: Number(e.target.nombre_dom.value),
-                capaNombre: m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor: Number(parseFloat(e.target.espesor_dom.value).toFixed(8)),
-                capaConductividad : Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat(e.target.espesor_dom.value/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-
-              }
-
-            }else{
-
-              data2 = {
-                capaNumero: Number(e.target.nombre_dom.value),
-                capaNombre: m_nombres[e.target.nombre_dom.value],
-                capaCategoria: m_categorias[e.target.nombre_dom.value],
-                capaEspesor: Number(parseFloat(e.target.espesor_dom.value).toFixed(8)),
-                capaConductividad : Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat(m_resistencias_descendentes[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
-                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
-
-              }
-
-            }
-
-          }
-
-          const addData = (data) =>{
-
-            const transaction = db.transaction(['capas'],'readwrite')
-            const objectStore = transaction.objectStore('capas')
-            const request = objectStore.add(data)
-
-          }
-
-          addData(data2)
-
-          window.location.reload()
-
-
-
-        }else{
-
-          console.log("esto debería ser un mensaje de error")
-
-        }
-
-
-
-      }
-
-
-
-    })
-
-  }
-}
-
-// ESCUCHADOR PARA CAMBIO DE ELEMENTO (MUROS/CUBIERTAS/SOLADOS)
-$elemento_dom.addEventListener('change', () => {
-
-
-  materialData5()
-  async function materialData5(){
+  materialData3()
+  async function materialData3(){
 
     let m_ides = []
     let m_tipos = []
@@ -1252,13 +975,9 @@ $elemento_dom.addEventListener('change', () => {
     const response = await fetch('materiales.csv');
     const data = await response.text();
 
-    let selector_categoria = ''
-
-
     const filas = data.split('\n').slice(1);
 
     filas.forEach(elemento => {
-
       const fila = elemento.split(',');
 
       const m_id = fila[0];
@@ -1277,13 +996,8 @@ $elemento_dom.addEventListener('change', () => {
       const m_contenido_energetico = fila[13];
       const m_emision = fila[14];
 
-
-
       m_ides.push(m_id)
       m_tipos.push(m_tipo)
-
-      // rastrear ese conjunto que es que necesito para tema colores por capa...
-
       m_categorias.push(m_categoria)
       m_categorias_enes.push(m_categoria_n)
       m_nombres.push(m_nombre)
@@ -1298,104 +1012,91 @@ $elemento_dom.addEventListener('change', () => {
       m_contenidos_energeticos.push(m_contenido_energetico)
       m_emisiones.push(m_emision)
 
-
     })
 
+    for(let i=0;i<m_nombres.length;i++){
 
-    if($elemento_dom.value == "valor_muro"){
+      if(m_espesores[i]>0 && $nombre_dom.value == m_ides[i]){
 
-      for(let i=0;i<m_categorias.length;i++){
-        if(m_tipos[i] != "horizontales"){
-          if(m_categorias[i] != m_categorias[i-1]){
-            selector_categoria += `<option class="form-control" value="${m_categorias_enes[i]}">${m_categorias[i]}</option>`
-          }
-        }
+        // buscar el input del espesor
+        $espesor_dom.value = Number(m_espesores[i])
+        document.getElementById("espesor_dom").disabled = true
+
+      }else if(m_espesores[i] == 0 && $nombre_dom.value == m_ides[i]){
+        $espesor_dom.value = 0
+        document.getElementById("espesor_dom").disabled = false
       }
-
-      $res_sup_int_dom.value = Number(.13)
-
-    }
-
-    // acá agregá que cambie la res_sup_int
-
-
-
-    if($elemento_dom.value == "valor_cubierta"){
-
-      for(let i=0;i<m_categorias.length;i++){
-        // a quienes hay que sacar de cubiertas?
-        // a los que hay que sacar es a los "heterogeneos"
-        if(m_tipos[i] != "heterogeneos" && m_categorias_enes[i] != 13){
-
-          if(m_categorias[i] != m_categorias[i-1]){
-            selector_categoria += `<option class="form-control" value="${m_categorias_enes[i]}">${m_categorias[i]}</option>`
-          }
-        }
-      }
-      $res_sup_int_dom.value = Number(.1)
     }
 
 
-    if($elemento_dom.value == "valor_solado"){
-
-      for(let i=0;i<m_categorias.length;i++){
-        // a quienes hay que sacar de solados?
-        // a los que hay que sacar es a los "heterogeneos"
-        if(m_tipos[i] != "heterogeneos" && m_categorias_enes[i] != 13){
-
-          if(m_categorias[i] != m_categorias[i-1]){
-            selector_categoria += `<option class="form-control" value="${m_categorias_enes[i]}">${m_categorias[i]}</option>`
-          }
-        }
-      }
-      $res_sup_int_dom.value = Number(.17)
-    }
-
-
-    $categoria_dom.innerHTML = selector_categoria
-
-    //leer_la_tabla()
 
   }
 
-  let ok_hay_elemento
-
-  obtener_localstorage2()
-
-  function obtener_localstorage2(){
-
-    if(localStorage.getItem("elemento_ls")){
-      ok_hay_elemento = JSON.parse(localStorage.getItem("elemento_ls"))
-    }
-
-    guardar_localstorage2()
-    function guardar_localstorage2(){
-      let entrada = {
-        ls_elemento: $elemento_dom.value
-      }
-      localStorage.setItem("elemento_ls", JSON.stringify(entrada));
-    }
-  }
 })
 
 
+////////////////////////////////////////
+///////////////   CAPAS ///////////////
+////////////////////////////////////////
+
+// Establecer variables de acuerdo a listado iram
+
+// ID - Número (Invisible)
+
+// Nombre - Texto @materiales
+// Espesor - Número (m) @materiales
+// Lambda - Número (W/m2.K) @materiales
+
+// Resistencia horizontal u ascendente - Número (m2.K/W) @materiales
+// Resistencia descendente - Número (m2.K/W) @materiales
+
+// Resistencia de uso - Número (m2.K/W) @elección condicional
+
+// transmitancia térmica - Número (W/m2.K) @cálculo simple
+
+// Temperatura - Número (ºC) @cálculo simple
+
+// VAPOR
+// Permeancia al vapor de agua - Número (g/m2.h.kPa) @materiales
+// Permeabilidad al vapor de agua - Número (g/m.h.kPa) @materiales
+
+// Resistencia al paso del vapor de agua - Número (m2.h.kPa/g) @cálculo simple o uso
+
+// Humedad relativa - Fracción (%) @cálculo
+// Presión de vapor por capa - Número (kPa) @cálculo
+// Temperatura de rocío - Número (ºC) | @tabla o calculadora psicrométrica
+
+// Delta temperatura - Número (ºC) | @cálculo
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+let $valor_k = document.getElementById('valor_k')
+
+let $temp_dis_ext_dom = document.getElementById('temp_dis_ext_dom') // conectado al dom - NO VISIBLE
+let $res_sup_int_dom = document.getElementById('res_sup_int_dom') // conectado al dom - NO VISIBLE
 
 
-//const { NoEmitOnErrorsPlugin } = require('webpack')
+obtener_localstorage()
+function obtener_localstorage(){
 
-//const { GetHumRatioFromEnthalpyAndTDryBulb } = require('psychrolib.js')
-// psychrolib
-//var psychrolib = require('psychrolib.js')
+  if(localStorage.getItem("climatologia")){
+    let ok_haydata = JSON.parse(localStorage.getItem("climatologia"))
 
+    ctx.font = "14px Calibri";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "center";
+    ctx.fillText(`Temp. ext.: ${ok_haydata.ls_tmnd}º C`, canvas.width/2+canvas.width/3.1, (canvas.height/3)*2.4);
 
-// DESDE ACÁ IMPORTO CRUDO EL PsychroLib
+    $temp_dis_ext_dom.value = Number(ok_haydata.ls_tmnd)
 
-/*
- * PsychroLib (version 2.5.0) (https://github.com/psychrometrics/psychrolib).
- * Copyright (c) 2018-2020 The PsychroLib Contributors for the current library implementation.
- * Copyright (c) 2017 ASHRAE Handbook — Fundamentals for ASHRAE equations and coefficients.
- * Licensed under the MIT License.
- */
+  }else{
+
+  }
+
+}
+
+// DESDE ACÁ COPIÉ Y PEGUÉ PSYCHROLIB /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
 
 function Psychrometrics() {
   /**
@@ -2452,7 +2153,6 @@ function Psychrometrics() {
   return new Psychrometrics();
 }));
 
-
 // HASTA ACÁ COPIÉ Y PEGUÉ PSYCHROLIB /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 
@@ -2482,14 +2182,302 @@ if(tmnde<3 && tmnde>-15){
 }
 
 
-
-// Quiebre para humedad relativa interior
-//humedad_relativa_interior = .43 (en este punto quedó para cam aire 5cm + hºaº 10cm, CABA)
-
-// traer fragmento para inyectar la tabla
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
 
 
-// antes de ejecutar esto tendría que saber el factor k para establecer temp interior según nivel nivel_iram
+const indexedDB = window.indexedDB
+const form = document.getElementById('form')
+const latabla = document.getElementById('latabla')
+
+leer_la_tabla()
+
+function leer_la_tabla(){
+
+  if(indexedDB && form){
+    let db
+    const request = indexedDB.open('listado',1)
+
+
+    request.onsuccess = () => {
+
+      db = request.result
+      readData()
+
+    }
+
+    request.onupgradeneeded = () => {
+
+      db = request.result
+
+      const objectStore = db.createObjectStore('capas',{
+        autoIncrement: true
+      })
+    }
+
+    request.onerror = (error) => {
+      console.log('Error con la indexedDB', error)
+    }
+
+    // Esta es la función que entra a leer la base de datos local.
+    const readData = () =>{
+
+      const transaction = db.transaction(['capas'],'readonly')
+      const objectStore = transaction.objectStore('capas')
+      const request = objectStore.openCursor()
+
+      request.onsuccess = (e) => {
+        const cursor = e.target.result
+        if(cursor){
+          cursor.continue()
+        }else{
+          //console.log("no hay más capas")
+        }
+      }
+    }
+
+    // Este escucha el botón submit que es el simbolo +
+    // Acá está agregando data a localStorage con addData(data2)
+    // TENGO QUE DECLARAR CADA TIPO DE BOTÓN Y ARMAR UN EVENTLISTENER PARA CADA BOTÓN.
+
+    form.addEventListener('submit', (e) =>{
+      e.preventDefault()
+      let data2
+      materialData4()
+
+      async function materialData4(){
+
+        data2=""
+
+        let m_ides = []
+        let m_tipos = []
+        let m_categorias = []
+        let m_categorias_enes = []
+        let m_nombres = []
+        let m_densidades = []
+        let m_conductividades = []
+        let m_capacidades_termicas = []
+        let m_espesores = []
+        let m_resistencias_ascendentes = []
+        let m_resistencias_descendentes = []
+        let m_permeancias = []
+        let m_permeabilidades = []
+        let m_contenidos_energeticos = []
+        let m_emisiones = []
+
+        const response = await fetch('materiales.csv');
+        const data = await response.text();
+
+        const filas = data.split('\n').slice(1);
+
+        filas.forEach(elemento => {
+
+          const fila = elemento.split(',');
+
+          const m_id = fila[0];
+          const m_tipo = fila[1];
+          const m_categoria = fila[2];
+          const m_categoria_n = fila[3];
+          const m_nombre = fila[4];
+          const m_densidad = fila[5];
+          const m_conductividad = fila[6];
+          const m_capacidad_termica = fila[7];
+          const m_espesor = fila[8];
+          const m_resistencia_ascendente = fila[9];
+          const m_resistencia_descendente = fila[10];
+          const m_permeancia = fila[11];
+          const m_permeabilidad = fila[12];
+          const m_contenido_energetico = fila[13];
+          const m_emision = fila[14];
+
+
+          m_ides.push(m_id)
+          m_tipos.push(m_tipo)
+          m_categorias.push(m_categoria)
+          m_categorias_enes.push(m_categoria_n)
+          m_nombres.push(m_nombre)
+          m_densidades.push(m_densidad)
+          m_conductividades.push(m_conductividad)
+          m_capacidades_termicas.push(m_capacidad_termica)
+          m_espesores.push(m_espesor)
+          m_resistencias_ascendentes.push(m_resistencia_ascendente)
+          m_resistencias_descendentes.push(m_resistencia_descendente)
+          m_permeancias.push(m_permeancia)
+          m_permeabilidades.push(m_permeabilidad)
+          m_contenidos_energeticos.push(m_contenido_energetico)
+          m_emisiones.push(m_emision)
+
+        })
+
+        // Esto se está ejecutando cuando apreto el botón "+"
+
+        if(e.target.espesor_dom.value>0){
+
+          if($elemento_dom.value == "valor_muro"){
+
+            // elemento muro con espesor prestablecido
+
+            if(m_resistencias_ascendentes[e.target.nombre_dom.value]
+              == m_resistencias_descendentes[e.target.nombre_dom.value]
+              && Number(m_resistencias_ascendentes[e.target.nombre_dom.value])>0){
+
+              data2 = {
+                capaNumero:Number(e.target.nombre_dom.value),
+                capaNombre:m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor:Number((parseFloat(e.target.espesor_dom.value).toFixed(8))/1000),
+                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat(m_resistencias_ascendentes[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+              }
+
+            }else{
+
+              // esta opción es para elementos de muros que no tienen prestablecido el espesor
+
+              const espesor_de_calculo = Number(parseFloat(e.target.espesor_dom.value).toFixed(8))
+
+              data2 = {
+                capaNumero:Number(e.target.nombre_dom.value),
+                capaNombre:m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor:espesor_de_calculo/1000,
+                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat((espesor_de_calculo/1000)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+              }
+            }
+
+          }else if($elemento_dom.value == "valor_cubierta"){
+
+            // caso 1: materiales con valor (>0) en res_asc o valores dif. de ascente != descendente
+            if(Number(m_resistencias_ascendentes[e.target.nombre_dom.value]) >0
+              || Number(m_resistencias_ascendentes[e.target.nombre_dom.value])
+              != Number(m_resistencias_descendentes[e.target.nombre_dom.value])){
+
+              data2 = {
+                capaNumero:Number(e.target.nombre_dom.value),
+                capaNombre:m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor:Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
+                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat(m_resistencias_ascendentes[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+              }
+
+              // caso 2: materiales con valor 0 en res_ascendente
+
+            }else if(Number(m_resistencias_ascendentes[e.target.nombre_dom.value]) == 0){
+              const espesor_de_calculo = Number(parseFloat(e.target.espesor_dom.value).toFixed(8))
+
+              data2 = {
+                capaNumero:Number(e.target.nombre_dom.value),
+                capaNombre:m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor:Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
+                capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat((espesor_de_calculo)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+              }
+            }
+
+          }else if($elemento_dom.value == "valor_solado"){
+
+
+            // caso 1 : materiales con valor (>0) en res_desce y q sean diferentes asce != desce
+            // la resistencia toma el valor dado para DESCENDENTE
+            if(Number(m_resistencias_descendentes[e.target.nombre_dom.value])>0
+            && Number(m_resistencias_ascendentes[e.target.nombre_dom.value])
+            != Number(m_resistencias_descendentes[e.target.nombre_dom.value])) {
+
+              data2 = {
+                capaNumero: Number(e.target.nombre_dom.value),
+                capaNombre: m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor: Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
+                capaConductividad : Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat(m_resistencias_descendentes[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+
+              }
+
+              // caso 2: materiales con valor = 0 en resist. descendente
+            }else if(Number(m_resistencias_descendentes[e.target.nombre_dom.value])==0){
+
+              data2 = {
+                capaNumero: Number(e.target.nombre_dom.value),
+                capaNombre: m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor: Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
+                capaConductividad : Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat((e.target.espesor_dom.value/1000)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+
+              }
+
+            }else{
+
+              data2 = {
+                capaNumero: Number(e.target.nombre_dom.value),
+                capaNombre: m_nombres[e.target.nombre_dom.value],
+                capaCategoria: m_categorias[e.target.nombre_dom.value],
+                capaEspesor: Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
+                capaConductividad : Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat(m_resistencias_descendentes[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
+                capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
+
+              }
+            }
+          }
+
+          const addData = (data) =>{
+
+            const transaction = db.transaction(['capas'],'readwrite')
+            const objectStore = transaction.objectStore('capas')
+            const request = objectStore.add(data)
+
+          }
+
+          addData(data2)
+          window.location.reload()
+
+        }else{
+          console.log("esto debería ser un mensaje de error")
+        }
+      }
+    })
+  }
+}
+
+// la temperatura de diseño interior debería variar según el Nivel A/B/C
+const temp_dis_int = 18
+
+// imprimir la temperatura interior
+
+ctx.font = "14px Calibri"
+ctx.fillStyle = "black"
+ctx.textAlign = "center"
+ctx.fillText(`Temp. int.:${temp_dis_int}º C`, canvas.width/6, canvas.height/4.65)
+
+
+
+
+
+
+if($elemento_dom.value == "valor_muro"){
+  $res_sup_int_dom.value = .13
+}else if($elemento_dom.value == "valor_cubierta"){
+  $res_sup_int_dom.value = .1
+}else{
+  $res_sup_int_dom.value = .17
+}
 
 
 
@@ -3415,6 +3403,7 @@ function posleer_la_tabla(){
 
 
             switch($elemento_dom.value){
+
               case "valor_muro":
               console.log("en la función posleer la tablar y muro")
 
@@ -3521,6 +3510,3 @@ $btnempty.addEventListener ('click', () => {
 })
 
 
-console.log("raíz")
-console.log("problemas a resolver:")
-console.log("cargar seteo previo")
