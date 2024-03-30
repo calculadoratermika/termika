@@ -2747,10 +2747,12 @@ function posleer_la_tabla(){
                 c_capas_color_por_capa = "black"
               }else if(c_capas_categorias[i] == "Pinturas"){
                 c_capas_color_por_capa = "dark grey"
-              }else if(c_capas_categorias[i] == "Cámaras de aire"){
+              }else if(c_capas_categorias[i] == "Cámaras horizontales de aire"){
                 c_capas_color_por_capa = "#dfe7e8"
               }else if(c_capas_categorias[i] == "Bloques de hormigón"){
                 c_capas_color_por_capa = "#6e7578"
+              }else if(c_capas_categorias[i] == "Cámaras verticales de aire"){
+                c_capas_color_por_capa = "#dfe7e8"
               }
 
 
