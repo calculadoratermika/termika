@@ -3512,3 +3512,6 @@ $btnempty.addEventListener ('click', () => {
 })
 
 
+console.log("admitancia")
+console.log("espesor, conductividad, densidad y capacidad calorífica")
+
