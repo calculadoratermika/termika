@@ -177,10 +177,10 @@
 175,homogeneos,Vidrios y otros,10,Vidrio armado con malla metalica,2700,1.05,830,0,0,0,0,0.0006,18,0.86
 176,homogeneos,Vidrios y otros,10,Vidrio resistente a calor,2200,1.07,830,0,0,0,0,0.0006,23.5,1.5
 177,homogeneos,Vidrios y otros,10,Vidrio templado,2800,0.8,830,0,0,0,0,0.0006,23.5,1.27
-178,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.025 micrones,2700,204,1000,0.000025,0,0,0.000001,0,156,8.26
-179,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.008 micrones,2700,204,1000,0.000008,0,0,0.0112,0,156,8.26
-180,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.05 micrones,960,0.5,1000,0.00005,0,0,0.033,0,0,0
-181,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.1 micrones,960,0.5,1000,0.0001,0,0,0.016,0,0,0
+178,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.025 micrones,2700,204,1000,0.0000025,0,0,0.000001,0,156,8.26
+179,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.008 micrones,2700,204,1000,0.0000008,0,0,0.0112,0,156,8.26
+180,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.05 micrones,960,0.5,1000,0.000005,0,0,0.033,0,0,0
+181,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.1 micrones,960,0.5,1000,0.00001,0,0,0.016,0,0,0
 182,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.15 micrones,960,0.5,1000,0.00015,0,0,0.012,0,0,0
 183,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.2 micrones,960,0.5,1000,0.0002,0,0,0.008,0,0,0
 184,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.25 micrones,960,0.5,1000,0.00025,0,0,0.006,0,0,0
@@ -196,15 +196,15 @@
 194,barreras,Barreras de vapor,11,Fieltro asfáltico - Espesor: 0.15 micrones,1200,0.5,1000,0.00015,0,0,0.67,0,0,0
 195,barreras,Barreras de vapor,11,Fieltro saturado y revestido en rollos - Espesor: 0.15 micrones,1100,0.5,1000,0.00015,0,0,0.03,0,0,0
 196,barreras,Barreras de vapor,11,Fieltro bituminado con hoja de aluminio - Espesor: 0.15 micrones,1200,0.5,1000,0.00015,0,0,0.03,0,0,0
-197,barreras,Barreras de vapor,11,Poliurea - Rayston,1020,0.5,1000,0.002,0,0,0.0375,0,0,0
-198,barreras,Barreras de vapor,11,IRAM 11625 - Masillas y adhesivos - Bituminosa aslfalto,1200,0.5,1000,0.005,0,0,0.065,0,0,0
-199,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (1 capa) - En frío Bituminosa,1200,0.5,1000,0.001,0,0,1.08,0,0,0
-200,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Asfáltica sobre madera terciada,1200,0.5,1000,0.002,0,0,0.08,0,0,0
-201,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Al agua tipo emulsión,1200,0.5,1000,0.002,0,0,16,0,0,0
-202,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (3 capas) - Mástic Asfáltico,1200,0.5,1000,0.003,0,0,0.1,0,0,0
-203,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución acuosa,1200,0.5,1000,0.00014,0,0,8.62,0,0,0
-204,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución solvente,1200,0.5,1000,0.00023,0,0,0.353,0,0,0
-205,barreras,Barreras de vapor,11,Poliurea PURTOP 1000 Mapei,1200,0.5,1000,0.002,0,0,4.2962962962963,0,0,0
+197,barreras,Barreras de vapor,11,Desmopol poliuretano monocomponente,1400,0.5,1000,1.5,0,0,0.583333333333333,0,0,0
+198,barreras,Barreras de vapor,11,IRAM 11625 - Masillas y adhesivos - Bituminosa aslfalto,1200,0.5,1000,4,0,0,0.065,0,0,0
+199,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (1 capa) - En frío Bituminosa,1200,0.5,1000,1,0,0,1.08,0,0,0
+200,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Asfáltica sobre madera terciada,1200,0.5,1000,2,0,0,0.08,0,0,0
+201,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Al agua tipo emulsión,1200,0.5,1000,2,0,0,16,0,0,0
+202,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (3 capas) - Mástic Asfáltico,1200,0.5,1000,3,0,0,0.1,0,0,0
+203,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución acuosa,1200,0.5,1000,1.4,0,0,8.62,0,0,0
+204,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución solvente,1200,0.5,1000,2.3,0,0,0.353,0,0,0
+205,barreras,Barreras de vapor,11,Poliurea PURTOP 1000 Mapei,1200,0.5,1000,2,0,0,4.2962962962963,0,0,0
 206,barreras,Pinturas,12,Pintura a la cal - Espesor: 0.1 micrones,1000,0.8,1000,0.0001,0,0,75,0,0,0
 207,barreras,Pinturas,12,Pintura tipo epoxi - Espesor: 0.1 micrones,1200,0.3,1000,0.0001,0,0,1.13,0,0,0
 208,barreras,Pinturas,12,Pintura a base de siliconas - Espesor: 0.1 micrones,1000,0.12,1000,0.0001,0,0,3.75,0,0,0

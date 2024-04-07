@@ -370,6 +370,11 @@ body {
 
 
   #copyright {
-    margin-left: 20%;
-    margin-top: 5%
-  }
+    margin-left: 15%;
+    margin-top: 5%;
+    font-family: "Calibri";
+    text-align: justify;
+    margin-right: 40%;
+    font-size: 18px
+}
+

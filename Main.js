@@ -2379,14 +2379,13 @@ function leer_la_tabla(){
                 capaCategoria: m_categorias[e.target.nombre_dom.value],
                 capaEspesor:Number(parseFloat(e.target.espesor_dom.value).toFixed(8)/1000),
                 capaConductividad: Number(parseFloat(m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
-                capaResistencia: Number(parseFloat((espesor_de_calculo)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
+                capaResistencia: Number(parseFloat((e.target.espesor_dom.value/1000)/m_conductividades[e.target.nombre_dom.value]).toFixed(8)),
                 capaPermeancia: Number(parseFloat(m_permeancias[e.target.nombre_dom.value]).toFixed(8)),
                 capaPermeabilidad: Number(parseFloat(m_permeabilidades[e.target.nombre_dom.value]).toFixed(8))
               }
             }
 
           }else if($elemento_dom.value == "valor_solado"){
-
 
             // caso 1 : materiales con valor (>0) en res_desce y q sean diferentes asce != desce
             // la resistencia toma el valor dado para DESCENDENTE
@@ -3403,7 +3402,7 @@ function posleer_la_tabla(){
 
 
 
-
+            //este switch está para el nivel iram
             switch($elemento_dom.value){
 
               case "valor_muro":
@@ -3511,4 +3510,7 @@ $btnempty.addEventListener ('click', () => {
   algo()
 })
 
+
+console.log("admitancia")
+console.log("espesor, conductividad, densidad y capacidad calorífica")
 
