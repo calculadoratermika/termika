@@ -3,21 +3,21 @@
 1,homogeneos,Cerámicos,1,Ladrillo común (1.800Kg/m3),1800,0.91,1000,0,0,0,0,0.08,3,0.23
 2,homogeneos,Cerámicos,1,Ladrillo común (2.000Kg/m3),2000,1.1,1000,0,0,0,0,0.08,3,0.23
 3,homogeneos,Cerámicos,1,Bloques de suelo cemento macizos (1.500Kg/m3),1500,0.32,1000,0,0,0,0,0.1,3,0.23
-4,heterogeneos,Cerámicos,1,Ladrillo cerámico 2x3 huecos - Espesor: 8cm,860,380.952380952381,1000,80,0.21,0.21,0,0.1,3,0.23
-5,heterogeneos,Cerámicos,1,Ladrillo cerámico 3x2 huecos - Espesor: 18cm,930,782.608695652174,1000,180,0.23,0.23,0,0.1,3,0.23
-6,heterogeneos,Cerámicos,1,Ladrillo cerámico 3x2 huecos - Espesor: 20cm,710,606.060606060606,1000,200,0.33,0.33,0,0.1,3,0.23
-7,heterogeneos,Cerámicos,1,Ladrillo cerámico 3x3 huecos - Espesor: 18cm,690,439.024390243902,1000,180,0.41,0.41,0,0.1,3,0.23
-8,heterogeneos,Cerámicos,1,Ladrillo cerámico 4x2 huecos - Espesor: 18cm,695,529.411764705882,1000,180,0.34,0.34,0,0.1,3,0.23
-9,heterogeneos,Cerámicos,1,Ladrillo cerámico 4x2 huecos - Espesor: 20cm,720,40,1000,20,0.5,0.5,0,0.1,3,0.23
-10,heterogeneos,Cerámicos,1,Ladrillo cerámico 4x4 huecos - Espesor: 18cm,755,382.978723404255,1000,180,0.47,0.47,0,0.1,3,0.23
-11,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 12cm,870,279.06976744186,1000,120,0.43,0.43,0,0.1,3,0.23
-12,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 18cm (810Kg/m3),810,333.333333333333,1000,180,0.54,0.54,0,0.1,3,0.23
-13,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 18cm (710Kg/m3),710,418.604651162791,1000,180,0.43,0.43,0,0.1,3,0.23
-14,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 18cm (750Kg/m3),750,327.272727272727,1000,180,0.55,0.55,0,0.1,3,0.23
-15,heterogeneos,Cerámicos,1,Bloque cerámico 3 cámaras trabado - Espesor: 12cm,670,307.692307692308,1000,120,0.39,0.39,0,0.1,3,0.23
-16,heterogeneos,Cerámicos,1,Bloque cerámico 3 cámaras trabado - Espesor: 18cm,680,360,1000,180,0.5,0.5,0,0.1,3,0.23
-17,heterogeneos,Cerámicos,1,Bloque cerámico 5 cámaras trabado - Espesor: 20cm,600,333.333333333333,1000,200,0.6,0.6,0,0.1,3,0.23
-18,heterogeneos,Cerámicos,1,Bloque cerámico 5 cámaras trabado - Espesor: 18cm,690,295.081967213115,1000,180,0.61,0.61,0,0.1,3,0.23
+4,heterogeneos,Cerámicos,1,Ladrillo cerámico 2x3 huecos - Espesor: 8cm,860,0,1000,80,0.21,0.21,0,0.1,3,0.23
+5,heterogeneos,Cerámicos,1,Ladrillo cerámico 3x2 huecos - Espesor: 18cm,930,0,1000,180,0.23,0.23,0,0.1,3,0.23
+6,heterogeneos,Cerámicos,1,Ladrillo cerámico 3x2 huecos - Espesor: 20cm,710,0,1000,200,0.33,0.33,0,0.1,3,0.23
+7,heterogeneos,Cerámicos,1,Ladrillo cerámico 3x3 huecos - Espesor: 18cm,690,0,1000,180,0.41,0.41,0,0.1,3,0.23
+8,heterogeneos,Cerámicos,1,Ladrillo cerámico 4x2 huecos - Espesor: 18cm,695,0,1000,180,0.34,0.34,0,0.1,3,0.23
+9,heterogeneos,Cerámicos,1,Ladrillo cerámico 4x2 huecos - Espesor: 20cm,720,0,1000,20,0.5,0.5,0,0.1,3,0.23
+10,heterogeneos,Cerámicos,1,Ladrillo cerámico 4x4 huecos - Espesor: 18cm,755,0,1000,180,0.47,0.47,0,0.1,3,0.23
+11,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 12cm,870,0,1000,120,0.43,0.43,0,0.1,3,0.23
+12,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 18cm (810Kg/m3),810,0,1000,180,0.54,0.54,0,0.1,3,0.23
+13,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 18cm (710Kg/m3),710,0,1000,180,0.43,0.43,0,0.1,3,0.23
+14,heterogeneos,Cerámicos,1,Bloque cerámico - Espesor: 18cm (750Kg/m3),750,0,1000,180,0.55,0.55,0,0.1,3,0.23
+15,heterogeneos,Cerámicos,1,Bloque cerámico 3 cámaras trabado - Espesor: 12cm,670,0,1000,120,0.39,0.39,0,0.1,3,0.23
+16,heterogeneos,Cerámicos,1,Bloque cerámico 3 cámaras trabado - Espesor: 18cm,680,0,1000,180,0.5,0.5,0,0.1,3,0.23
+17,heterogeneos,Cerámicos,1,Bloque cerámico 5 cámaras trabado - Espesor: 20cm,600,0,1000,200,0.6,0.6,0,0.1,3,0.23
+18,heterogeneos,Cerámicos,1,Bloque cerámico 5 cámaras trabado - Espesor: 18cm,690,0,1000,180,0.61,0.61,0,0.1,3,0.23
 19,homogeneos,Metales,2,Acero de construccion,7800,58,512,0,0,0,0,0.0000001,20.1,1.37
 20,homogeneos,Metales,2,Hierro fundido,7200,50,1000,0,0,0,0,0.0000001,25,1.91
 21,homogeneos,Metales,2,Aluminio,2700,204,896,0,0,0,0,0.0000001,115,8.24
@@ -177,10 +177,10 @@
 175,homogeneos,Vidrios y otros,10,Vidrio armado con malla metalica,2700,1.05,830,0,0,0,0,0.0006,18,0.86
 176,homogeneos,Vidrios y otros,10,Vidrio resistente a calor,2200,1.07,830,0,0,0,0,0.0006,23.5,1.5
 177,homogeneos,Vidrios y otros,10,Vidrio templado,2800,0.8,830,0,0,0,0,0.0006,23.5,1.27
-178,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.025 micrones,2700,204,1000,0.000025,0,0,0.000001,0,156,8.26
-179,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.008 micrones,2700,204,1000,0.000008,0,0,0.0112,0,156,8.26
-180,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.05 micrones,960,0.5,1000,0.00005,0,0,0.033,0,0,0
-181,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.1 micrones,960,0.5,1000,0.0001,0,0,0.016,0,0,0
+178,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.025 micrones,2700,204,1000,0.0000025,0,0,0.000001,0,156,8.26
+179,barreras,Barreras de vapor,11,Hoja de aluminio - Espesor: 0.008 micrones,2700,204,1000,0.0000008,0,0,0.0112,0,156,8.26
+180,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.05 micrones,960,0.5,1000,0.000005,0,0,0.033,0,0,0
+181,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.1 micrones,960,0.5,1000,0.00001,0,0,0.016,0,0,0
 182,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.15 micrones,960,0.5,1000,0.00015,0,0,0.012,0,0,0
 183,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.2 micrones,960,0.5,1000,0.0002,0,0,0.008,0,0,0
 184,barreras,Barreras de vapor,11,Polietileno - Espesor: 0.25 micrones,960,0.5,1000,0.00025,0,0,0.006,0,0,0
@@ -196,15 +196,15 @@
 194,barreras,Barreras de vapor,11,Fieltro asfáltico - Espesor: 0.15 micrones,1200,0.5,1000,0.00015,0,0,0.67,0,0,0
 195,barreras,Barreras de vapor,11,Fieltro saturado y revestido en rollos - Espesor: 0.15 micrones,1100,0.5,1000,0.00015,0,0,0.03,0,0,0
 196,barreras,Barreras de vapor,11,Fieltro bituminado con hoja de aluminio - Espesor: 0.15 micrones,1200,0.5,1000,0.00015,0,0,0.03,0,0,0
-197,barreras,Barreras de vapor,11,Poliurea - Rayston,1020,0.5,1000,0.002,0,0,0.0375,0,0,0
-198,barreras,Barreras de vapor,11,IRAM 11625 - Masillas y adhesivos - Bituminosa aslfalto,1200,0.5,1000,0.005,0,0,0.065,0,0,0
-199,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (1 capa) - En frío Bituminosa,1200,0.5,1000,0.001,0,0,1.08,0,0,0
-200,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Asfáltica sobre madera terciada,1200,0.5,1000,0.002,0,0,0.08,0,0,0
-201,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Al agua tipo emulsión,1200,0.5,1000,0.002,0,0,16,0,0,0
-202,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (3 capas) - Mástic Asfáltico,1200,0.5,1000,0.003,0,0,0.1,0,0,0
-203,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución acuosa,1200,0.5,1000,0.00014,0,0,8.62,0,0,0
-204,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución solvente,1200,0.5,1000,0.00023,0,0,0.353,0,0,0
-205,barreras,Barreras de vapor,11,Poliurea PURTOP 1000 Mapei,1200,0.5,1000,0.002,0,0,4.2962962962963,0,0,0
+197,barreras,Barreras de vapor,11,Desmopol poliuretano monocomponente,1400,0.5,1000,1.5,0,0,0.583333333333333,0,0,0
+198,barreras,Barreras de vapor,11,IRAM 11625 - Masillas y adhesivos - Bituminosa aslfalto,1200,0.5,1000,4,0,0,0.065,0,0,0
+199,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (1 capa) - En frío Bituminosa,1200,0.5,1000,1,0,0,1.08,0,0,0
+200,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Asfáltica sobre madera terciada,1200,0.5,1000,2,0,0,0.08,0,0,0
+201,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (2 capas) - Al agua tipo emulsión,1200,0.5,1000,2,0,0,16,0,0,0
+202,barreras,Barreras de vapor,11,IRAM 11625 - Pinturas (3 capas) - Mástic Asfáltico,1200,0.5,1000,3,0,0,0.1,0,0,0
+203,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución acuosa,1200,0.5,1000,1.4,0,0,8.62,0,0,0
+204,barreras,Barreras de vapor,11,AVERMA - Pintura asfáltica en solución solvente,1200,0.5,1000,2.3,0,0,0.353,0,0,0
+205,barreras,Barreras de vapor,11,Poliurea PURTOP 1000 Mapei,1200,0.5,1000,2,0,0,4.2962962962963,0,0,0
 206,barreras,Pinturas,12,Pintura a la cal - Espesor: 0.1 micrones,1000,0.8,1000,0.0001,0,0,75,0,0,0
 207,barreras,Pinturas,12,Pintura tipo epoxi - Espesor: 0.1 micrones,1200,0.3,1000,0.0001,0,0,1.13,0,0,0
 208,barreras,Pinturas,12,Pintura a base de siliconas - Espesor: 0.1 micrones,1000,0.12,1000,0.0001,0,0,3.75,0,0,0
